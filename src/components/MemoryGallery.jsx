@@ -14,44 +14,50 @@ const galleryPhotos = [
   {
     id: 1,
     url: memory1,
-    caption: "A beautiful day in the park with you. ❤️",
+    caption: "Tum hmesha aise he mere sine pe pass rahna .. ❤️",
     tilt: "polaroid-tilt-left",
-    date: "A beautiful memory"
+    date: "Sukoon",
+    position: "object-top"
   },
   {
     id: 2,
     url: memory2,
-    caption: "Sitting together, my favorite place is next to you.",
+    caption: "In your arms, I've found my forever home. I love you endlessly.",
     tilt: "polaroid-tilt-right",
-    date: "Together with you"
+    date: "Forever",
+    position: "object-top"
   },
   {
     id: 3,
     url: memory3,
-    caption: "Another perfect moment captured forever.",
+    caption: "Tere bina meri har khushi adhuri hai, tu hi meri poori duniya hai.",
     tilt: "polaroid-tilt-left",
-    date: "Simply breathtaking"
+    date: "Meri Duniya",
+    position: "object-top"
   },
   {
     id: 4,
     url: memory4,
-    caption: "Our lovely mirror selfie. Always stylish, always together.",
+    caption: "Chhoti chhoti aadaein, pyari si yaadein. Every moment with you feels like pure magic.",
     tilt: "polaroid-tilt-right",
-    date: "Connecting our hearts"
+    date: "Perfect Moments",
+    position: "object-center"
   },
   {
     id: 5,
     url: memory5,
-    caption: "Looking amazing as always.",
+    caption: "Tumhari ek muskaan meri saari thakan aur dukh mita deti hai.",
     tilt: "polaroid-tilt-left",
-    date: "My favorite person"
+    date: "My Sunshine",
+    position: "object-top"
   },
   {
     id: 6,
     url: memory6,
-    caption: "Every moment with you is a treasure.",
+    caption: "Mera har din tumhare hone se poora hota hai. Tum meri manzil ho.",
     tilt: "polaroid-tilt-right",
-    date: "Forever and always"
+    date: "Humsafar",
+    position: "object-top"
   }
 ];
 
@@ -116,7 +122,7 @@ export default function MemoryGallery() {
               <img
                 src={photo.url}
                 alt={`Memory ${photo.id}`}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`w-full h-full object-cover ${photo.position} transition-transform duration-700 group-hover:scale-105`}
                 loading="lazy"
               />
               
