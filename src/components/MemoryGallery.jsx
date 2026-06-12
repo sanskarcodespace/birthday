@@ -2,56 +2,56 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, X, Heart, ZoomIn } from 'lucide-react';
 
-// Importing the actual copied custom images
-import shabnamSmiling from '../assets/images/shabnam-smiling.jpg';
-import coupleSelfie from '../assets/images/couple-selfie-1.jpg';
-import shabnamOutdoor from '../assets/images/shabnam-outdoor.jpg';
-import videoCall from '../assets/images/video-call.jpg';
-import coupleRestaurant from '../assets/images/couple-restaurant.jpg';
-import coupleVehicle from '../assets/images/couple-vehicle.jpg';
+// Importing the new custom images
+import memory1 from '../assets/images/memory1.jpg';
+import memory2 from '../assets/images/memory2.jpg';
+import memory3 from '../assets/images/memory3.jpg';
+import memory4 from '../assets/images/memory4.jpg';
+import memory5 from '../assets/images/memory5.jpg';
+import memory6 from '../assets/images/memory6.jpg';
 
 const galleryPhotos = [
   {
     id: 1,
-    url: shabnamSmiling,
-    caption: "Your beautiful smile that makes my entire world light up. ❤️",
+    url: memory1,
+    caption: "A beautiful day in the park with you. ❤️",
     tilt: "polaroid-tilt-left",
     date: "A beautiful memory"
   },
   {
     id: 2,
-    url: coupleSelfie,
-    caption: "You and me, hand in hand. My favorite place is next to you.",
+    url: memory2,
+    caption: "Sitting together, my favorite place is next to you.",
     tilt: "polaroid-tilt-right",
     date: "Together with you"
   },
   {
     id: 3,
-    url: shabnamOutdoor,
-    caption: "Looking so stunning. Your presence takes my breath away.",
+    url: memory3,
+    caption: "Another perfect moment captured forever.",
     tilt: "polaroid-tilt-left",
     date: "Simply breathtaking"
   },
   {
     id: 4,
-    url: videoCall,
-    caption: "Late night calls, silly smiles, and sweet talks that I cherish forever.",
+    url: memory4,
+    caption: "Our lovely mirror selfie. Always stylish, always together.",
     tilt: "polaroid-tilt-right",
     date: "Connecting our hearts"
   },
   {
     id: 5,
-    url: coupleRestaurant,
-    caption: "Delicious food, sweet talks, and the perfect date with my queen.",
+    url: memory5,
+    caption: "Looking amazing as always.",
     tilt: "polaroid-tilt-left",
-    date: "Our perfect date"
+    date: "My favorite person"
   },
   {
     id: 6,
-    url: coupleVehicle,
-    caption: "Pyaar bhara safar hum dono ka... Every ride with you is a beautiful adventure. ❤️",
+    url: memory6,
+    caption: "Every moment with you is a treasure.",
     tilt: "polaroid-tilt-right",
-    date: "Humsafar, Hamesha"
+    date: "Forever and always"
   }
 ];
 
@@ -96,7 +96,7 @@ export default function MemoryGallery() {
         </motion.p>
       </div>
 
-      {/* Masonry/Grid Gallery */}
+      {/* Masonry/Grid Gallery - optimized for 6 images (1, 2, or 3 columns based on screen size) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
         {galleryPhotos.map((photo, index) => (
           <motion.div
@@ -106,13 +106,13 @@ export default function MemoryGallery() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.8 }}
             onClick={() => setSelectedPhoto(photo)}
-            className={`polaroid-card cursor-pointer bg-[#ffffff] p-4 pb-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-gray-200/5 ${photo.tilt} w-full max-w-[310px] group relative`}
+            className={`polaroid-card cursor-pointer bg-[#ffffff] p-4 pb-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-gray-200/5 ${photo.tilt} w-full max-w-[340px] group relative`}
           >
             {/* Interactive Glow effect overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             {/* Polaroid image window */}
-            <div className="relative aspect-square w-full overflow-hidden bg-gray-900 border border-gray-100/10">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-900 border border-gray-100/10">
               <img
                 src={photo.url}
                 alt={`Memory ${photo.id}`}
@@ -179,7 +179,7 @@ export default function MemoryGallery() {
                 <img
                   src={selectedPhoto.url}
                   alt="Precious Moment"
-                  className="w-full h-auto max-h-[60vh] object-contain rounded-sm"
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-sm"
                 />
               </div>
 

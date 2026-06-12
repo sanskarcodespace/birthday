@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ChevronDown } from 'lucide-react';
-import coupleRestaurant from '../assets/images/couple-restaurant.jpg';
+import heroImage from '../assets/images/memory1.jpg';
 
 export default function LandingHero({ onOpen }) {
   const [typedText, setTypedText] = useState('');
@@ -28,7 +28,7 @@ export default function LandingHero({ onOpen }) {
       <div className="absolute inset-0 z-0">
         <div 
           className="w-full h-full bg-cover bg-center animate-ken-burns opacity-30 blur-[2px]"
-          style={{ backgroundImage: `url(${coupleRestaurant})` }}
+          style={{ backgroundImage: `url(${heroImage})` }}
         />
         {/* Dark radial glow overlay to keep text ultra-readable & premium */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#07020d] via-[#0d0614]/85 to-[#07020d]/90" />
